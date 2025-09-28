@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Campanha Solidária — Doe para Transformar Vidas</title>
+    <meta name="description"
+        content="Campanha Solidária — ajude com qualquer quantia via PIX. Transparência, prestação de contas e impacto real." />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue: #0b63d8;
+            --dark: #05204a;
+            --accent: #ffcc00;
+            --muted: #6b7280;
+            --bg: #f6fbff;
+            --card: #ffffff;
+            --radius: 14px;
+            --maxw: 1100px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', system-ui, Arial;
+            background: linear-gradient(180deg, var(--bg), #eef6ff);
+            color: var(--dark);
+        }
+
+        .site {
+            max-width: var(--maxw);
+            margin: 24px auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--dark);
+        }
+
+        .logo {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--blue), #084cb3);
+            display: grid;
+            place-items: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.4rem;
+        }
+
+        p.lead {
+            margin: 4px 0 0;
+            color: var(--muted);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+            background: linear-gradient(90deg, rgba(11, 99, 216, 0.06), rgba(255, 204, 0, 0.03));
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(11, 61, 145, 0.06);
+            margin-top: 18px;
+        }
+
+        .hero-row {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .cta-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 0;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            color: white;
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border: 2px solid var(--blue);
+            color: var(--blue);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 18px;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 16px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(11, 61, 145, 0.04);
+        }
+
+        .goal {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .progress {
+            height: 18px;
+            background: #eaf2ff;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--blue), #3e84f7);
+            width: 0%;
+        }
+
+        .stats {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            flex: 1;
+            min-width: 160px;
+            background: #f8fbff;
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .donation-presets {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .preset {
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px dashed #e6f3ff;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        input[type="number"],
+        input[type="text"],
+        input[type="email"] {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #e6eefc;
+            width: 100%;
+        }
+
+        label {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .flex {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .qr {
+            display: grid;
+            place-items: center;
+            padding: 8px;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .testi {
+            padding: 10px;
+            border-radius: 10px;
+            background: linear-gradient(180deg, #fff, #fbfdff);
+            border: 1px solid #eef6ff;
+        }
+
+        footer {
+            margin-top: 18px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+            padding-bottom: 40px;
+        }
+
+        .small {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .trust {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .badge {
+            background: #fff;
+            padding: 6px 10px;
+            border-radius: 8px;
+            border: 1px solid #eef6ff;
+            font-weight: 700;
+        }
+
+        .modal-back {
+            position: fixed;
+            inset: 0;
+            background: rgba(2, 6, 23, 0.45);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 20px;
+        }
+
+        .modal {
+            background: var(--card);
+            max-width: 720px;
+            width: 100%;
+            border-radius: 12px;
+            padding: 18px;
+        }
+
+        .row {
+            display: flex;
+            gap: 12px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+            margin-top: 12px;
+        }
+
+        @media(min-width:900px) {
+            .hero {
+                grid-template-columns: 1fr 420px;
+            }
+
+            .grid {
+                grid-template-columns: 2fr 1fr;
+            }
+
+            .testimonials {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="site" role="main">
+        <header>
+            <a class="brand" href="#" aria-label="Campanha Solidária">
+                <div class="logo">CS</div>
+                <div>
+                    <h1>Campanha Solidária — Unidos por Vidas</h1>
+                    <p class="lead">Transparência, impacto e prestação de contas — doe qualquer quantia via PIX</p>
+                </div>
+            </a>
+            <div class="trust">
+                <div class="badge">Transparência</div>
+                <div class="badge">Relatório mensal</div>
+                <div class="badge">Pix: <strong id="pix-inline">61994172085</strong></div>
+            </div>
+        </header>
+
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-row">
+                <div>
+                    <h2 id="hero-title" style="margin:0">Doe agora para transformar vidas — cada contribuição importa
+                    </h2>
+                    <p class="small" style="margin-top:8px">Nossa meta: arrecadar <strong>R$ <span
+                                id="goalAmount">25.000</span></strong> para programas de alimentação, saúde e educação.
+                        Prestação de contas mensalmente.</p>
+                </div>
+
+                <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:8px">
+                    <button class="btn btn-primary" id="openDonate">Doar agora</button>
+                    <a class="btn btn-ghost" href="#how">Como sua doação ajuda</a>
+                </div>
+            </div>
+
+            <aside class="card" aria-label="Resumo da campanha">
+                <div class="goal">
+                    <div class="small">Progresso da campanha</div>
+                    <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                        <div class="bar" id="progressBar" style="width:0%"></div>
+                    </div>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="small">Arrecadado</div><strong>R$ <span id="collected">0</span></strong>
+                        </div>
+                        <div class="stat">
+                            <div class="small">Meta</div><strong>R$ <span id="goal">25.000</span></strong>
+                        </div>
+                        <div class="stat">
+                            <div class="small">Doadores</div><strong><span id="donorCount">0</span></strong>
+                        </div>
+                    </div>
+                    <div class="small">Modo seguro: para doações recorrentes, contate-nos por WhatsApp.</div>
+                </div>
+            </aside>
+        </section>
+
+        <main class="grid" id="how">
+            <section class="card" aria-labelledby="how-title">
+                <h3 id="how-title">Como sua doação é utilizada</h3>
+                <p class="small">Priorizamos impacto imediato e transparência. Relatórios mensais com fotos e recibos.
+                    Exemplos de uso:</p>
+                <ul>
+                    <li>R$ 20 — cesta básica para 1 família por 1 semana</li>
+                    <li>R$ 50 — kit de higiene básico</li>
+                    <li>R$ 200 — suporte educacional (material e aulas)</li>
+                    <li>R$ 1.000 — ação comunitária local (evento, logística)</li>
+                </ul>
+
+                <div style="margin-top:12px">
+                    <h4>Prova social</h4>
+                    <div class="testimonials">
+                        <div class="testi"><strong>Maria, voluntária</strong>
+                            <div class="small">"Vi a transformação na comunidade — a prestação de contas me deixou
+                                tranquila para apoiar."</div>
+                        </div>
+                        <div class="testi"><strong>João, beneficiado</strong>
+                            <div class="small">"Com a ajuda consegui comprar material escolar para meus filhos."</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="card" aria-labelledby="donate-title">
+                <h3 id="donate-title">Doar via PIX</h3>
+                <p class="small">Escolha um valor sugerido ou digite outro. Depois copie a chave PIX abaixo ou escaneie
+                    o QR code no seu app bancário.</p>
+
+                <div style="margin-top:10px" class="donation-presets" role="list">
+                    <button class="preset" data-value="20">R$ 20</button>
+                    <button class="preset" data-value="50">R$ 50</button>
+                    <button class="preset" data-value="100">R$ 100</button>
+                    <button class="preset" data-value="200">R$ 200</button>
+                    <button class="preset" data-value="500">R$ 500</button>
+                </div>
+
+                <div style="margin-top:10px" class="row">
+                    <div style="flex:1">
+                        <label for="amount">Valor (R$)</label>
+                        <input type="number" id="amount" min="1" step="1" placeholder="Ex: 50">
+                    </div>
+                </div>
+
+                <div style="margin-top:12px;display:grid;gap:10px">
+                    <div style="display:flex;gap:8px;align-items:center">
+                        <div style="flex:1">
+                            <label for="name">Seu nome (opcional)</label>
+                            <input id="name" type="text" placeholder="Como deseja aparecer no mural">
+                        </div>
+                    </div>
+
+                    <div style="display:flex;gap:12px;align-items:center">
+                        <div style="flex:1">
+                            <label for="email">E-mail (opcional)</label>
+                            <input id="email" type="email" placeholder="Receba comprovante por e-mail (opcional)">
+                        </div>
+                    </div>
+
+                    <div style="display:flex;gap:8px;align-items:center;justify-content:space-between">
+                        <div class="qr" aria-hidden="true">
+                            <!-- QR imagem gerada por API pública. Substitua se quiser seu próprio gerador -->
+                            <img id="pixQr"
+                                src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=61994172085"
+                                alt="QR code PIX" width="140" height="140" style="display:block">
+                        </div>
+
+                        <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+                            <div>
+                                <label class="small">Chave PIX</label>
+                                <div style="display:flex;gap:8px;align-items:center">
+                                    <input id="pixKey" value="61994172085" readonly style="flex:1;background:#f8fbff">
+                                    <button class="btn btn-ghost" id="copyPix">Copiar</button>
+                                </div>
+                            </div>
+                            <div class="small">Após a transferência, clique em <strong>Notificar doação</strong> para
+                                que registremos e enviemos comprovante (manual).</div>
+                            <div style="display:flex;gap:8px;margin-top:6px">
+                                <button class="btn btn-primary" id="notifyBtn">Notificar doação</button>
+                                <button class="btn btn-ghost" id="manualBtn">Precisa de ajuda?</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="card" aria-labelledby="impact-title">
+                <h3 id="impact-title">Transparência e Prestação de Contas</h3>
+                <p class="small">Publicaremos relatórios mensais com fotos, recibos e descrição detalhada do uso dos
+                    recursos. Se quiser recibo oficial, coloque seu e-mail no formulário ou solicite via WhatsApp.</p>
+                <div style="margin-top:12px" class="small">Recomendamos: confirme sempre o comprovante do seu banco, e
+                    envie-o ao sistema para registro. Nós enviaremos um recibo/agradecimento pessoal.</div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="small">© <span id="year"></span> Campanha Solidária — Todos os direitos reservados • Política de
+                privacidade e transparência disponíveis mediante solicitação.</div>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal-back" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal" role="document" aria-labelledby="modalTitle">
+            <h3 id="modalTitle">Confirmar doação</h3>
+            <p class="small">Você será redirecionado ao modal de instruções. Esta página não processa pagamentos — siga
+                as instruções do seu aplicativo bancário para completar a transferência PIX.</p>
+            <div style="margin-top:10px">
+                <label class="small">Valor (R$)</label>
+                <input id="modalAmount" type="number" min="1"
+                    style="width:100%;padding:10px;border-radius:8px;border:1px solid #eef6ff">
+            </div>
+            <div style="margin-top:8px">
+                <label class="small">Nome (opcional)</label>
+                <input id="modalName" type="text" placeholder="Como deseja aparecer no mural"
+                    style="width:100%;padding:10px;border-radius:8px;border:1px solid #eef6ff">
+            </div>
+            <div class="actions">
+                <button class="btn btn-ghost" id="closeModal">Cancelar</button>
+                <button class="btn btn-primary" id="confirmDonate">Gerar instruções PIX</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Configs iniciais ---
+        const PIX_KEY = '61994172085'; // confirme antes de publicar
+        const GOAL = 25000;
+        let collected = Number(localStorage.getItem('collected') || 0);
+        let donors = Number(localStorage.getItem('donors') || 0);
+
+        // DOM
+        const progressBar = document.getElementById('progressBar');
+        const collectedEl = document.getElementById('collected');
+        const donorCountEl = document.getElementById('donorCount');
+        const goalEl = document.getElementById('goal');
+        const pixKeyInput = document.getElementById('pixKey');
+        const copyBtn = document.getElementById('copyPix');
+        const pixQr = document.getElementById('pixQr');
+        const amountInput = document.getElementById('amount');
+        const presets = document.querySelectorAll('.preset');
+        const openDonate = document.getElementById('openDonate');
+        const modal = document.getElementById('modal');
+        const modalAmount = document.getElementById('modalAmount');
+        const modalName = document.getElementById('modalName');
+        const closeModal = document.getElementById('closeModal');
+        const confirmDonate = document.getElementById('confirmDonate');
+        const notifyBtn = document.getElementById('notifyBtn');
+        const manualBtn = document.getElementById('manualBtn');
+
+        // inicializa valores
+        document.getElementById('goal').innerText = GOAL.toLocaleString('pt-BR');
+        document.getElementById('goalAmount').innerText = GOAL.toLocaleString('pt-BR');
+        collectedEl.innerText = collected.toLocaleString('pt-BR');
+        donorCountEl.innerText = donors;
+        updateProgress();
+
+        // presets
+        presets.forEach(btn => btn.addEventListener('click', () => {
+            amountInput.value = btn.dataset.value;
+        }));
+
+        // copy pix
+        copyBtn.addEventListener('click', async () => {
+            try {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    await navigator.clipboard.writeText(PIX_KEY);
+                } else {
+                    // fallback for older browsers
+                    const tmp = document.createElement('input');
+                    tmp.value = PIX_KEY;
+                    document.body.appendChild(tmp);
+                    tmp.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tmp);
+                }
+                copyBtn.innerText = 'Copiado!';
+                setTimeout(() => copyBtn.innerText = 'Copiar', 1500);
+            } catch (e) {
+                alert('Erro ao copiar — copie manualmente: ' + PIX_KEY);
+            }
+        });
+
+        // open modal
+        openDonate.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            modal.setAttribute('aria-hidden', 'false');
+            modalAmount.value = amountInput.value || '';
+            modalName.value = document.getElementById('name').value || '';
+        });
+
+        closeModal.addEventListener('click', () => { closeModalFunc(); });
+        function closeModalFunc() {
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
+        }
+
+        // confirm donate modal -> shows PIX instructions (opens new small window with the QR)
+        confirmDonate.addEventListener('click', () => {
+            const val = Number(modalAmount.value);
+            if (!val || val <= 0) { alert('Digite um valor válido.'); return; }
+            const name = modalName.value || 'Doador(a) anônimo(a)';
+            const instructions = `
+INSTRUÇÕES PARA DOAÇÃO
+-----------------------
+Valor: R$ ${val.toLocaleString('pt-BR')}
+Chave PIX: ${PIX_KEY}
+Nome informado: ${name}
+
+1) Abra seu app do banco.
+2) Escolha PIX -> Chave -> cole a chave acima OU escaneie o QR code.
+3) Confirme o valor e envie.
+4) Volte aqui e clique em "Notificar doação" para registrarmos e enviarmos comprovante.
+
+Obrigado por apoiar nossa campanha.
+`;
+            const w = window.open('', '_blank', 'width=420,height=640');
+            if (w) {
+                const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=${encodeURIComponent(PIX_KEY)}`;
+                w.document.write(`<pre style="font-size:14px;white-space:pre-wrap">${instructions}</pre><div style="text-align:center;margin-top:12px"><img src="${qrUrl}" alt="PIX QR"></div>`);
+                w.document.title = 'Instruções PIX — Campanha Solidária';
+            } else {
+                alert('Pop-up bloqueado — abra manualmente o link do QR em outra aba.');
+            }
+            closeModalFunc();
+        });
+
+        // Notify (after user made PIX) -> register donation locally (simulated) and show thank you
+        notifyBtn.addEventListener('click', () => {
+            const amount = Number(amountInput.value);
+            if (!amount || amount <= 0) { alert('Digite o valor que você doou no campo Valor.'); return; }
+            const name = document.getElementById('name').value || 'Anônimo';
+            const email = document.getElementById('email').value || '';
+            collected += amount;
+            donors += 1;
+            localStorage.setItem('collected', collected);
+            localStorage.setItem('donors', donors);
+            collectedEl.innerText = collected.toLocaleString('pt-BR');
+            donorCountEl.innerText = donors;
+            updateProgress();
+
+            const log = JSON.parse(localStorage.getItem('donations') || '[]');
+            log.unshift({ date: new Date().toISOString(), amount, name, email });
+            localStorage.setItem('donations', JSON.stringify(log));
+
+            alert('Obrigad@! Registro recebido. Enviaremos agradecimento e recibo quando confirmada a compensação. Se quiser, envie o comprovante por e-mail.');
+            amountInput.value = '';
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+        });
+
+        manualBtn.addEventListener('click', () => {
+            const phone = '5511999999999'; // replace with real contact
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent('Olá! Preciso de ajuda para doar na campanha.')}`, '_blank');
+        });
+
+        function updateProgress() {
+            const pct = Math.min(100, Math.round((collected / GOAL) * 100));
+            progressBar.style.width = pct + '%';
+            progressBar.setAttribute('aria-valuenow', pct);
+        }
+
+        // quick mural (shows last 3 donations)
+        (function renderMural() {
+            const mural = JSON.parse(localStorage.getItem('donations') || '[]').slice(0, 5);
+            if (!mural.length) return;
+            const frag = document.createElement('div');
+            frag.innerHTML = '<h4>Mural de doadores (últimos registros)</h4>';
+            mural.forEach(d => {
+                const dEl = document.createElement('div');
+                dEl.className = 'testi';
+                const date = new Date(d.date).toLocaleString('pt-BR');
+                dEl.innerHTML = `<strong>${escapeHtml(d.name)}</strong> — R$ ${Number(d.amount).toLocaleString('pt-BR')} <div class="small">${date}</div>`;
+                frag.appendChild(dEl);
+            });
+            document.querySelector('main .card').appendChild(frag);
+        })();
+
+        // accessibility & small helpers
+        document.getElementById('year').innerText = new Date().getFullYear();
+
+        function escapeHtml(s) {
+            return String(s).replace(/[&<>"']/g, function (c) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+            });
+        }
+    </script>
+</body>
+
+</html>

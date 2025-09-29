@@ -528,8 +528,8 @@
         // --- Configs iniciais ---
         const PIX_KEY = '61994172085'; // confirme antes de publicar
         const GOAL = 25000;
-        let collected = Number(localStorage.getItem('collected') || 0);
-        let donors = Number(localStorage.getItem('donors') || 0);
+        let collected = Number(localStorage.getItem('collected') || 500);
+        let donors = Number(localStorage.getItem('donors') || 7);
 
         // DOM
         const progressBar = document.getElementById('progressBar');
@@ -652,7 +652,7 @@ Obrigado por apoiar nossa campanha.
         });
 
         manualBtn.addEventListener('click', () => {
-            const phone = '5511999999999'; // replace with real contact
+            const phone = '5561994172085'; // replace with real contact
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent('Olá! Preciso de ajuda para doar na campanha.')}`, '_blank');
         });
 
